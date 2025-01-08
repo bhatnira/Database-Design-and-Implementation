@@ -1,0 +1,5 @@
+SELECT salesperson.salespersonNum, employee.employeeFirstName, employee.employeeLastName, salesperson.salespersonSalesCount,
+salesperson.salespersonSalesAmount,(salesperson.salespersonCommissionPercent*salesperson.salespersonSalesAmount) AS Commission_Earned
+FROM employee, salesperson
+WHERE employee.employeeNum=salesperson.salespersonNum
+ORDER BY (salesperson.salespersonCommissionPercent*salesperson.salespersonSalesAmount) DESC;
